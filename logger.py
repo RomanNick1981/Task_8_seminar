@@ -18,7 +18,10 @@ def input_data():
 
     while var != 1 and var != 2:
         print('Ты дурак?! Даю тебе последний шанс')
-        var = int(input("Введите номер варианта: "))
+        try:
+            var = int(input("Введите номер варианта: "))
+        except:
+            var = 0
 
     if var == 1:
         with open('data_first_variant.csv', 'a', encoding='utf-8') as file:
